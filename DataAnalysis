@@ -9,8 +9,8 @@ import scipy as sp
 import json
 import urllib.request
 
-connection = urllib.request.urlopen('https://www.predictit.org/api/marketdata/ticker/538.051418/')
+url = urllib.request.urlopen('https://www.predictit.org/api/marketdata/all')
 
-RDTtweets = connection.read()
+data = url.read()
 
-print(RDTtweets)
+print(data)
