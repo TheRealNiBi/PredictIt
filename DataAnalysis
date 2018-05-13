@@ -1,0 +1,16 @@
+try:
+    import urllib.request as urllib2
+except ImportError:
+    import urllib2
+import numpy as np
+import pandas as pd
+import scipy as sp
+
+import json
+import urllib.request
+
+connection = urllib.request.urlopen('https://www.predictit.org/api/marketdata/ticker/538.051418/')
+
+RDTtweets = connection.read()
+
+print(RDTtweets)
