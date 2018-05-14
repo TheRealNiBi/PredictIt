@@ -1,10 +1,15 @@
-import pandas as pd
 import requests as req
 
+################
+# URL SCRAPING #
+################
 r1 = req.get('https://www.predictit.org/api/marketdata/ticker/RDTS.051618/')
-data = r1.json()
-df = pd.DataFrame(data)
-contracts = data['Contracts']
+r2 = req.get('https://factba.se/topic/calendar')
+#r3 = req.get('')
+#r4 = req.get('')
+
+data1 = r1.json()
+contracts = data1['Contracts']
 c0 = (contracts[0])
 c1 = (contracts[1])
 c2 = (contracts[2])
@@ -48,3 +53,11 @@ print('BuyYes', BuyYes)
 print('BuyNo', BuyNo)
 print('SellYes', SellYes)
 print('SellNo', SellNo)
+
+# pull trading volume from predictit
+# Pull Number of tweets from twitter and timestamp
+# average tweets for each day
+# pull events from white house schedule
+# correlate white house schedule events with tweets
+# pull keywords from news stories and count
+# correlate news stories with tweets
