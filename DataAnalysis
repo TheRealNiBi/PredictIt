@@ -1,16 +1,50 @@
-try:
-    import urllib.request as urllib2
-except ImportError:
-    import urllib2
-import numpy as np
 import pandas as pd
-import scipy as sp
+import requests as req
 
-import json
-import urllib.request
-
-url = urllib.request.urlopen('https://www.predictit.org/api/marketdata/all')
-
-data = url.read()
-
-print(data)
+r1 = req.get('https://www.predictit.org/api/marketdata/ticker/RDTS.051618/')
+data = r1.json()
+df = pd.DataFrame(data)
+contracts = data['Contracts']
+c0 = (contracts[0])
+c1 = (contracts[1])
+c2 = (contracts[2])
+c3 = (contracts[3])
+c4 = (contracts[4])
+c5 = (contracts[5])
+c6 = (contracts[6])
+BY0 = c0['BestBuyYesCost']
+BY1 = c1['BestBuyYesCost']
+BY2 = c2['BestBuyYesCost']
+BY3 = c3['BestBuyYesCost']
+BY4 = c4['BestBuyYesCost']
+BY5 = c5['BestBuyYesCost']
+BY6 = c6['BestBuyYesCost']
+BN0 = c0['BestBuyNoCost']
+BN1 = c1['BestBuyNoCost']
+BN2 = c2['BestBuyNoCost']
+BN3 = c3['BestBuyNoCost']
+BN4 = c4['BestBuyNoCost']
+BN5 = c5['BestBuyNoCost']
+BN6 = c6['BestBuyNoCost']
+SY0 = c0['BestSellYesCost']
+SY1 = c1['BestSellYesCost']
+SY2 = c2['BestSellYesCost']
+SY3 = c3['BestSellYesCost']
+SY4 = c4['BestSellYesCost']
+SY5 = c5['BestSellYesCost']
+SY6 = c6['BestSellYesCost']
+SN0 = c0['BestSellNoCost']
+SN1 = c1['BestSellNoCost']
+SN2 = c2['BestSellNoCost']
+SN3 = c3['BestSellNoCost']
+SN4 = c4['BestSellNoCost']
+SN5 = c5['BestSellNoCost']
+SN6 = c6['BestSellNoCost']
+BuyYes = (BY0, BY1, BY2, BY3, BY4, BY5, BY6)
+BuyNo = (BN0, BN1, BN2, BN3, BN4, BN5, BN6)
+SellYes = (SY0, SY1, SY2, SY3, SY4, SY5, SY6)
+SellNo = (SN0, SN1, SN2, SN3, SN4, SN5, SN6)
+print('BuyYes', BuyYes)
+print('BuyNo', BuyNo)
+print('SellYes', SellYes)
+print('SellNo', SellNo)
