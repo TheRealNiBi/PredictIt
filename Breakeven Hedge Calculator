@@ -14,14 +14,14 @@ Strategy_Mixed = ('N')
 
 if Strategy_OnlyYes == 'Y':
     # invested = ['Enter your current MARKET investment, NOT THE MKT RISK']
-    invested = (60)*100
+    invested = ()*100
     print('invested =', invested/100)
-    AccountBalance = (100)*100
+    AccountBalance = ()*100
     print('AccountBalance =', AccountBalance/100)
     availible = (AccountBalance - invested)
     print('availible =', availible/100)
-# Enter what percent you want to invest
-    investment = availible*(50)/100
+# Enter what percent you want to invest as an integer
+    investment = availible*()/100
     print('investment =', investment/100)
     price = range(1, 100)  # range
     print()
@@ -42,14 +42,14 @@ if Strategy_OnlyYes == 'Y':
 
 if Strategy_OnlyNo == 'Y':
     # invested = ['Enter your current MARKET investment, NOT THE MKT RISK']
-    invested = (60)*100
+    invested = ()*100
     print('invested =', invested/100)
-    AccountBalance = (100)*100
+    AccountBalance = (1)*100
     print('AccountBalance =', AccountBalance/100)
     availible = (AccountBalance - invested)
     print('availible =', availible/100)
 # Enter what percent you want to invest
-    investment = availible*(50)/100
+    investment = availible*()/100
     print('investment =', investment/100)
     price = range(1, 100)  # range
     print()
